@@ -63,31 +63,41 @@ archive/PokemonData/
 
 ---
 
-🔍 6. 결과 분석
-Transfer Learning 효과
-Pretrained 모델(Exp1, Exp2, Exp3)은 높은 성능을 보인 반면,
-Random Initialization(Exp4)은 Accuracy 22%로 매우 낮은 성능을 기록하였다.
-이는 데이터셋 규모(약 7,000장)가 충분히 크지 않기 때문에,
-사전 학습된 특징을 활용하는 Transfer Learning이 필수적임을 보여준다.
-Fine-tuning 범위 영향
-FC layer만 학습한 Exp1(81%) 대비,
-전체 레이어를 학습한 Exp2(89%)는 약 8% 성능 향상을 보였다.
-이는 포켓몬 이미지가 ImageNet과 도메인이 다르기 때문에
-feature extractor까지 재학습하는 것이 중요함을 의미한다.
-모델 구조 영향
-EfficientNet 기반 모델(Exp3)이 93%로 가장 높은 성능을 기록하였다.
-이는 ResNet50보다 더 효율적인 feature extraction 구조 덕분으로 해석된다.
-🎯 최종 결론
-Transfer Learning은 필수적이며,
-Full Fine-tuning이 성능 향상에 크게 기여하고,
-EfficientNet이 가장 우수한 성능을 보였다.
+## 🔍 6. 결과 분석
 
-👉 따라서 최적 조합은:
+### 1️⃣ Transfer Learning 효과
 
-EfficientNet + Pretrained + Full Fine-tuning
+* Pretrained 모델(Exp1, Exp2, Exp3)은 높은 성능을 보인 반면,
+  Random Initialization(Exp4)은 **Accuracy 22%로 매우 낮은 성능**을 기록하였다.
+* 이는 데이터셋 규모(약 7,000장)가 충분히 크지 않기 때문에,
+  사전 학습된 특징을 활용하는 **Transfer Learning이 필수적**임을 보여준다.
 
-👉 결론:
-**Pretrained + Full Fine-tuning 조합이 가장 좋은 성능을 보임**
+---
+
+### 2️⃣ Fine-tuning 범위 영향
+
+* FC layer만 학습한 Exp1(81%) 대비,
+  전체 레이어를 학습한 Exp2(89%)는 **약 8% 성능 향상**을 보였다.
+* 이는 포켓몬 이미지가 ImageNet과 도메인이 다르기 때문에
+  feature extractor까지 재학습하는 것이 중요함을 의미한다.
+
+---
+
+### 3️⃣ 모델 구조 영향
+
+* EfficientNet 기반 모델(Exp3)이 **93%로 가장 높은 성능**을 기록하였다.
+* 이는 ResNet50보다 더 효율적인 feature extraction 구조 덕분으로 해석된다.
+
+---
+
+## 🎯 최종 결론
+
+* Transfer Learning은 필수적이며,
+* Full Fine-tuning이 성능 향상에 크게 기여하고,
+* EfficientNet이 가장 우수한 성능을 보였다.
+
+👉 최적 조합:
+**EfficientNet + Pretrained + Full Fine-tuning**
 
 ---
 
